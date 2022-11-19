@@ -49,14 +49,6 @@ def beenpwned(list_of_sites):
 
             dicts.append(data)
 
-        # if no breach detected (response code != 200)...
-        else:
-            data = {"site_name": website,
-                    "domain": None,
-                    "breach_date": "No breach detected"}
-
-            dicts.append(data)
-
     print(dicts)
 
 
