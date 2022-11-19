@@ -5,4 +5,3 @@ class Individual:
         self.name = name
         self.organisations = organisations
         self.domains = domains
-
