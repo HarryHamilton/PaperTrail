@@ -1,7 +1,8 @@
 import requests
+import tldextract
 
 api_url = "https://haveibeenpwned.com/api/v3/breach/"  # add site url after /breach/
-test_urls = ["wewefwew"]
+test_urls = ["facebook.com"]
 
 
 def beenpwned(list_of_sites):
@@ -9,7 +10,11 @@ def beenpwned(list_of_sites):
 
     # Loop through all of the websites
     for website in list_of_sites:
-        request_url = api_url + website  # full url that we will POST
+        # strip domain name from URL
+        domain = tldextract.extract(website)
+        domain = domain.domain
+
+        request_url = api_url + domain  # full url that we will POST
         response = requests.get(request_url)
         # Checks if website has been pwned. If it has, POST req will return a 200 response code.
         # if the response code is not 200, it hasn't been pwned
