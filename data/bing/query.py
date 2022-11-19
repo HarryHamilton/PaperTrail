@@ -18,12 +18,27 @@ class BingQuery:
         self.individual = individual
 
     def __generate_queries(self):
-        organisation_query = f"\"{self.individual.name}\" and "
-        organisations = [f"\"{organisation}\"" for organisation in self.individual.organisations]
-        organisation_query += f"({organisations})"
+        organisation_query = None
+        if len(self.individual.organisations) > 0:
+            organisation_query = f"\"{self.individual.name}\" and "
+            organisations = [f"\"{organisation}\"" for organisation in self.individual.organisations]
+            organisation_query += f"({organisations})"
 
-        personal_site_query = " and ".join([f"\"{site}\"" for site in self.individual.domains])
+        personal_site_query = None
+        if len(self.individual.domains) > 0:
+            personal_site_query = " and ".join([f"\"{site}\"" for site in self.individual.domains])
 
-        query = f"({personal_site_query}) or ({organisation_query})"
-        return urllib.parse.quote_plus(query)
+        if organisation_query is not None and personal_site_query is not None:
+            query = f"({personal_site_query}) or ({organisation_query})"
+        elif organisation_query is not None:
+            query = organisation_query
+        elif personal_site_query is not None:
+            query = personal_site_query
+        else:
+            query = None
+
+        if query is not None:
+            return urllib.parse.quote_plus(query)
+        else:
+            return None
 
