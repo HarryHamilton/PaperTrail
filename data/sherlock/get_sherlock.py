@@ -7,7 +7,9 @@ OUTPUT_DIRECTORY = "searches"
 def get_results(usernames=None):
     """
     :param usernames: A list of usernames with length > 0 to search.
-    :return: True if successful and CSV file created in `searches`, otherwise False.
+    :return: A list of dictionaries containing two
+    keys, `user` and `hits` with the following format: x = [{user: <user>, hits: [<hit0>, <hit1>, ...]},
+    ...]. Returns None if `usernames` is empty.
     """
     if usernames is not None:
         users = ""
@@ -18,8 +20,27 @@ def get_results(usernames=None):
         command = f"python3 sherlock/sherlock --csv --folderoutput {OUTPUT_DIRECTORY} {users}"
         init_reqs()
         os.system(command)
-        return True
-    return False
+        return format_output(usernames)
+    return None
+
+
+def format_output(usernames=None):
+    """
+    :param usernames: A list of usernames with length > 0 to search.
+    :return: A list of dictionaries containing two
+    keys, `user` and `hits` with the following format: x = [{user: <user>, hits: [<hit0>, <hit1>, ...]},
+    ...]. Returns None if `usernames` is empty.
+    """
+    if usernames is not None:
+        output = []
+        for user in usernames:
+            tmp = {"user": user}
+            with open(f"{user}.txt", "r") as file:
+                tmp["hits"] = [x.strip("\n") for x in file.readlines()]
+            output.append(tmp)
+
+        return output
+    return None
 
 
 def init_reqs():
