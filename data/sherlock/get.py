@@ -18,7 +18,6 @@ def query(usernames=None):
             users += " "
 
         command = f"python3 sherlock/sherlock --csv --folderoutput {OUTPUT_DIRECTORY} {users}"
-        init_reqs()
         os.system(command)
         return format_output(usernames)
     return None
@@ -41,7 +40,3 @@ def format_output(usernames=None):
 
         return output
     return None
-
-
-def init_reqs():
-    os.system("python3 -m pip install -r sherlock/requirements.txt")
