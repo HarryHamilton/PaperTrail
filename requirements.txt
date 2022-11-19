@@ -1,3 +1,4 @@
+-r data/data-requirements.txt
 Flask~=2.2.2
 requests
 tldextract
