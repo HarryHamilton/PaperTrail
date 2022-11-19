@@ -10,3 +10,6 @@ class DataForm(FlaskForm):
     domains = StringField()
 
     submit = SubmitField()
+
+class SiteSelectionForm(FlaskForm):
+    pass
