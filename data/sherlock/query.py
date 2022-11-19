@@ -1,4 +1,5 @@
 import os
+import secrets
 
 
 class SherlockQuery:
@@ -43,10 +44,23 @@ class SherlockQuery:
         if self.__usernames is not None:
             output = []
             for user in self.__usernames:
-                tmp = {"user": user}
+                base = {"user": user}
+                urls_with_id = []
                 with open(f"{self.__ROOT_DIRECTORY}/{self.__OUTPUT_DIRECTORY}/{user}.txt", "r") as file:
-                    tmp["hits"] = [x.strip("\n") for x in file.readlines()[:-1]]
-                output.append(tmp)
+                    url_list = [x.strip("\n") for x in file.readlines()[:-1]]
+                    used_ids = []
+                    for url in url_list:
+                        unique_id = None
+                        while not unique_id:
+                            x = secrets.token_hex(16)
+                            if x not in used_ids:
+                                unique_id = x
+                                used_ids.append(x)
+
+                        urls_with_id.append({"url": url, "id": unique_id})
+
+                base["urls"] = urls_with_id
+                output.append(base)
 
             return output
         return None
