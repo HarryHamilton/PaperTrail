@@ -1,9 +1,10 @@
 import os
-import requests
 import urllib.parse
 
-class BingQuery:
+import requests
 
+
+class BingQuery:
     try:
         API_Key = os.environ.get('BING_WEB_SEARCH_API_KEY')
         assert API_Key

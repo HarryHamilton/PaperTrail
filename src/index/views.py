@@ -1,8 +1,10 @@
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template
+
 from src.index.forms import DataForm
 from src.models import Individual
 
 index_blueprint = Blueprint('index', __name__, template_folder='templates')
+
 
 @index_blueprint.route('/', methods=['GET', 'POST'])
 def index():
