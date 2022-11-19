@@ -1,2 +1,4 @@
 Flask~=2.2.2
+requests
+tldextract
 Flask-WTF
