@@ -21,10 +21,6 @@ def beenpwned(site):
             if key == "BreachDate":
                 breach_date = value
 
-        print(site_name)
-        print(domain)
-        print(breach_date)
-
         data = {"site_name": site_name,
                 "domain": domain,
                 "breach_date": breach_date}
