@@ -4,12 +4,16 @@ import tldextract
 api_url = "https://haveibeenpwned.com/api/v3/breach/"  # add site url after /breach/
 test_urls = ["facebook.com"]
 
-# what this function expects:
-# a list of dictionaries
-# each dictionary is comprised of:
-# key = website url
-# val = id
 def beenpwned(list_of_sites):
+    """
+    what this function expects:
+    - a list of dictionaries
+    each dictionary is comprised of:
+    - key = website url
+    - val = id
+    :param list_of_sites:
+    :return: a list of dictionaries
+    """
     dicts = []
 
     # Loop through all of the websites
