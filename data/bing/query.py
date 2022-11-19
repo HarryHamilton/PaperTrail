@@ -1,6 +1,5 @@
 import os
 import requests
-import urllib.parse
 
 class BingQuery:
 
@@ -35,4 +34,4 @@ class BingQuery:
         personal_site_query = " and ".join([f"\"{site}\"" for site in self.individual.domains])
 
         query = f"({personal_site_query}) or ({organisation_query})"
-        return urllib.parse.quote_plus(query)
+        return query
