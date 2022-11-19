@@ -1,6 +1,5 @@
 import os
 import requests
-from src.models import Individual
 import urllib.parse
 
 class BingQuery:
@@ -13,7 +12,7 @@ class BingQuery:
 
     SEARCH_URL = "https://api.bing.microsoft.com/v7.0/search"
 
-    def __init__(self, individual: Individual):
+    def __init__(self, individual):
         self.individual = individual
 
     def query(self):
