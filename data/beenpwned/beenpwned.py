@@ -3,6 +3,7 @@ import requests
 api_url = "https://haveibeenpwned.com/api/v3/breach/"  # add site url after /breach/
 test_urls = ["wewefwew"]
 
+
 def beenpwned(list_of_sites):
     dicts = []
 
@@ -34,6 +35,15 @@ def beenpwned(list_of_sites):
                     "breach_date": breach_date}
 
             dicts.append(data)
+
+        # if no breach detected (response code != 200)...
+        else:
+            data = {"site_name": website,
+                    "domain": None,
+                    "breach_date": "No breach detected"}
+
+            dicts.append(data)
+
     print(dicts)
 
 
