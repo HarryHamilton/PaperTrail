@@ -1,0 +1,180 @@
+{
+  "_type": "SearchResponse",
+  "queryContext": {
+    "originalQuery": "(\"lukebriggs.dev\") or (\"Luke Briggs\" and (['\"Newcastle University\"']))"
+  },
+  "webPages": {
+    "webSearchUrl": "https://www.bing.com/search?q=(%22lukebriggs.dev%22)+or+(%22Luke+Briggs%22+and+(%5b%27%22Newcastle+University%22%27%5d))",
+    "totalEstimatedMatches": 2450000000,
+    "value": [
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.0",
+        "name": "Home - Luke Briggs",
+        "url": "https://lukebriggs.dev/",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://lukebriggs.dev",
+        "snippet": "I'm Luke Briggs: a Computer Science student from the UK studying at Newcastle University",
+        "deepLinks": [
+          {
+            "name": "Posts",
+            "url": "https://www.lukebriggs.dev/posts",
+            "snippet": "Posts - Home - Luke Briggs"
+          },
+          {
+            "name": "Projects",
+            "url": "https://www.lukebriggs.dev/projects",
+            "snippet": "Projects - Home - Luke Briggs"
+          },
+          {
+            "name": "Calmer Internet",
+            "url": "https://lukebriggs.dev/projects/calmer-internet/",
+            "snippet": "Calmer Internet - Home - Luke Briggs"
+          }
+        ],
+        "dateLastCrawled": "2022-11-15T19:54:00.0000000Z",
+        "language": "en",
+        "isNavigational": true
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.1",
+        "name": "Home - Luke Briggs",
+        "url": "https://lukebriggs.dev/about/",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://lukebriggs.dev/about",
+        "snippet": "I'm Luke Briggs: a Computer Science student from the UK studying at Newcastle University. About Site This is a site where I will share what I think might be helpful to other people in similar places in life. Most of the stuff here will be related to side projects, my academic work, and will be a reference to which I will point to on occasion.",
+        "dateLastCrawled": "2022-11-10T18:57:00.0000000Z",
+        "language": "en",
+        "isNavigational": false
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.2",
+        "name": "LukeBriggsDev (Luke Briggs) \u00b7 GitHub",
+        "url": "https://github.com/LukeBriggsDev",
+        "thumbnailUrl": "https://www.bing.com/th?id=OIP.YbseMTRDyYqqhmjV4MP-VwAAAA&w=80&h=80&c=1&pid=5.1",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://github.com/LukeBriggsDev",
+        "snippet": "Computer Science student at Newcastle University. LukeBriggsDev has 23 repositories available. Follow their code on GitHub. ... Luke Briggs LukeBriggsDev Follow. ... 21 followers \u00b7 17 following Newcastle University. United Kingdom; https://www.lukebriggs.dev @LukeBriggsDev; Achievements. x2. Beta Send feedback. Achievements. x2. Beta Send ...",
+        "dateLastCrawled": "2022-11-17T00:21:00.0000000Z",
+        "language": "en",
+        "isNavigational": false
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.3",
+        "name": "Sounds2 Spotify - Luke Briggs",
+        "url": "https://lukebriggs.dev/projects/sounds2spotify/",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://lukebriggs.dev/projects/sounds2spotify",
+        "snippet": "I'm Luke Briggs: a Computer Science student from the UK studying at Newcastle University. Home; Posts; Projects; About; Thu 16 Sep 2021. Sounds2 Spotify. Source Code. Sounds2Spotify is a ...",
+        "dateLastCrawled": "2022-08-03T06:45:00.0000000Z",
+        "language": "en",
+        "isNavigational": false
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.4",
+        "name": "lukebriggs - itch.io",
+        "url": "https://lukebriggs.itch.io/",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://lukebriggs.itch.io",
+        "snippet": "Follow lukebriggs; lukebriggs. lukebriggs.dev @lukebriggsdev. I\u2019m Luke Briggs: a Computer Science student from the UK studying at Newcastle University. Type or Die. lukebriggs. Action. Play in browser.",
+        "dateLastCrawled": "2022-10-01T00:32:00.0000000Z",
+        "language": "en",
+        "isNavigational": false
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.5",
+        "name": "Inspection & Dissection: Ping! \u2013 My First Game in Unity",
+        "url": "https://lukebriggs.dev/inspection-and-dissection-ping/",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://lukebriggs.dev/inspection-and-dissection-ping",
+        "snippet": "I'm Luke Briggs: a Computer Science student from the UK studying at Newcastle University. ... Luke Briggs included in Project Release Game Development 2018-06-23 541 words 3 minutes \u201cHuman beings, who are almost unique in having the ability to learn from the > experience of others, are also remarkable for their apparent disinclination to do ...",
+        "dateLastCrawled": "2022-06-04T22:57:00.0000000Z",
+        "language": "en",
+        "isNavigational": false
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.6",
+        "name": "Pepys - Luke Briggs",
+        "url": "https://lukebriggs.dev/projects/pepys/",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://lukebriggs.dev/projects/pepys",
+        "snippet": "Pepys stores all your entries as plain text files in a YYYY/MM folder structure with a YYYY-MM-DD.md name format. This means that all your entries themselves will be viewable forever in any text editor that will come along. Pepys also uses pandoc syntax, with support for pandoc conversions to other formats. This means that all your entries can ...",
+        "dateLastCrawled": "2022-09-18T16:58:00.0000000Z",
+        "language": "en",
+        "isNavigational": false
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.7",
+        "name": "Inspection and Dissection: Type or Die - Luke Briggs",
+        "url": "https://lukebriggs.dev/inspection-and-dissection-type-or-die/",
+        "isFamilyFriendly": true,
+        "displayUrl": "https://lukebriggs.dev/inspection-and-dissection-type-or-die",
+        "snippet": "Luke Briggs included in Project Release Game Development 2021-03-05 581 words 3 minutes . Itch.io Link. For the past 5 days I have done what I have failed to do many times before, complete the process of making a game. ... The game was for the NUCATS Game Jam. NUCATS is the Newcastle University Computing and Technology Society. It was made in ...",
+        "dateLastCrawled": "2022-06-22T17:43:00.0000000Z",
+        "language": "en",
+        "isNavigational": false
+      }
+    ]
+  },
+  "rankingResponse": {
+    "mainline": {
+      "items": [
+        {
+          "answerType": "WebPages",
+          "resultIndex": 0,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.0"
+          }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 1,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.1"
+          }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 2,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.2"
+          }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 3,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.3"
+          }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 4,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.4"
+          }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 5,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.5"
+          }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 6,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.6"
+          }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 7,
+          "value": {
+            "id": "https://api.bing.microsoft.com/api/v7/#WebPages.7"
+          }
+        }
+      ]
+    }
+  }
+}
