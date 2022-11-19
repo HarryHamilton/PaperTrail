@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, session
 from src.index.forms import DataForm
 from src.models import Individual
+import hashlib
 
 index_blueprint = Blueprint('index', __name__, template_folder='templates')
 
@@ -21,4 +22,4 @@ def index():
             domains=domains
         )
         print(new_individual.__dict__)
-    return render_template('base.html', form=form)
+    return render_template('index.html', form=form)
