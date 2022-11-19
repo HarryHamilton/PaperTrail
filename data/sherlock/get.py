@@ -4,7 +4,7 @@ import os
 OUTPUT_DIRECTORY = "searches"
 
 
-def get_results(usernames=None):
+def query(usernames=None):
     """
     :param usernames: A list of usernames with length > 0 to search.
     :return: A list of dictionaries containing two
