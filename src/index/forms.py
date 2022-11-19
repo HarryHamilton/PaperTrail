@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, BooleanField
-from wtforms.validators import InputRequired, Length, Email, EqualTo, ValidationError
+from wtforms import StringField, SubmitField
+from wtforms.validators import InputRequired
+
 
 class DataForm(FlaskForm):
     usernames = StringField(validators=[InputRequired()])
