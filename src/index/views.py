@@ -10,13 +10,11 @@ def index():
     form = DataForm()
     if form.validate_on_submit():
         usernames = [username.strip() for username in form.usernames.data.split(",")]
-        emails = [email.strip() for email in form.emails.data.split(",")]
         name = form.name.data
         organisations = [organisation.strip() for organisation in form.organisations.data.split(",")]
         domains = [domain.strip() for domain in form.domains.data.split(",")]
         new_individual = Individual(
             usernames=usernames,
-            emails=emails,
             name=name,
             organisations=organisations,
             domains=domains
