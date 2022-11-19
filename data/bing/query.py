@@ -1,6 +1,5 @@
 import os
 import requests
-import typing
 from src.models import Individual
 import urllib.parse
 
@@ -17,6 +16,18 @@ class BingQuery:
     def __init__(self, individual: Individual):
         self.individual = individual
 
+    def query(self):
+        params = {
+            "q": self.__generate_queries()
+        }
+        headers = {
+            "Ocp-Apim-Subscription-Key": self.API_Key
+        }
+
+        response = requests.get(self.SEARCH_URL, headers=headers, params=params)
+
+        return response.json()
+
     def __generate_queries(self):
         organisation_query = f"\"{self.individual.name}\" and "
         organisations = [f"\"{organisation}\"" for organisation in self.individual.organisations]
@@ -26,4 +37,3 @@ class BingQuery:
 
         query = f"({personal_site_query}) or ({organisation_query})"
         return urllib.parse.quote_plus(query)
-
