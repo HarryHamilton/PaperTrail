@@ -1,0 +1,3 @@
+[submodule "data/sherlock/sherlock"]
+	path = data/sherlock/sherlock
+	url = git@github.com:sherlock-project/sherlock.git
