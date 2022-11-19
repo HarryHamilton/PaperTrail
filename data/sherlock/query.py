@@ -3,6 +3,7 @@ import os
 
 class SherlockQuery:
     # TODO: Date searches (somehow) to allow for data pruning if storage capacity runs low.
+    __ROOT_DIRECTORY = os.path.dirname(__file__)
     __OUTPUT_DIRECTORY = "searches"
     __results = None
 
@@ -21,11 +22,11 @@ class SherlockQuery:
                 users += user
                 users += " "
 
-            query_command = f"python3 sherlock/sherlock --csv --folderoutput {self.__OUTPUT_DIRECTORY} {users}"
+            query_command = f"python3 {self.__ROOT_DIRECTORY}/sherlock/sherlock --csv --folderoutput {self.__ROOT_DIRECTORY}/{self.__OUTPUT_DIRECTORY} {users}"
             os.system(query_command)
 
             for user in self.__usernames:
-                cleanup_command = f"rm {self.__OUTPUT_DIRECTORY}/{user}.csv"
+                cleanup_command = f"rm {self.__ROOT_DIRECTORY}/{self.__OUTPUT_DIRECTORY}/{user}.csv"
                 os.system(cleanup_command)
 
             results = self.__format_output()
@@ -43,8 +44,8 @@ class SherlockQuery:
             output = []
             for user in self.__usernames:
                 tmp = {"user": user}
-                with open(f"{user}.txt", "r") as file:
-                    tmp["hits"] = [x.strip("\n") for x in file.readlines()]
+                with open(f"{self.__ROOT_DIRECTORY}/{self.__OUTPUT_DIRECTORY}/{user}.txt", "r") as file:
+                    tmp["hits"] = [x.strip("\n") for x in file.readlines()[:-1]]
                 output.append(tmp)
 
             return output
