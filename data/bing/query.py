@@ -31,9 +31,9 @@ class BingQuery:
     def __generate_queries(self):
         organisation_query = f"\"{self.individual.name}\" and "
         organisations = [f"\"{organisation}\"" for organisation in self.individual.organisations]
-        organisation_query += f"({organisations})"
+        organisation_query += f"({' or '.join(organisations)})"
 
-        personal_site_query = " and ".join([f"\"{site}\"" for site in self.individual.domains])
+        personal_site_query = " or ".join([f"\"{site}\"" for site in self.individual.domains])
 
         query = f"({personal_site_query}) or ({organisation_query})"
         return query
