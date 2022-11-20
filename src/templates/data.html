@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+    <ul class="list-group">
+        {% for site in account_sites %}
+            <!-- Button trigger modal -->
+            <li class="list-group-item">
+                {% if site.pwned == True %}
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#{{ site.url.translate(str.maketrans('', '', string.punctuation)) }}">
+                {% else %}
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#{{ site.url.translate(str.maketrans('', '', string.punctuation)) }}">
+                {% endif %}
+                    <img src="http://www.google.com/s2/favicons?domain={{ site.extracted_domain.domain + "." + site.extracted_domain.suffix }}" alt="favicon">
+                    {{ site.extracted_domain.domain.title() }}
+                </button>
+            </li>
+            <!-- Modal -->
+            <div class="modal fade" id="{{ (site.url.translate(str.maketrans('', '', string.punctuation))) }}"
+                 tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{ site.extracted_domain.domain.title() }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <a href="{{ site.url }}">{{ site.url }}</a><br>
+                            {% if site.pwned %}
+                                <b>WARNING: Site involved in data breach on {{ site.breach_date }}</b>
+                                <p>{{ site.pwn_description | safe}}</p>
+                            {% endif %}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+{% endblock %}
