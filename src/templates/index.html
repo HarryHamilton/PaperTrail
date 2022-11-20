@@ -1,0 +1,14 @@
+{% block content %}
+    <form method="post">
+        {{ form.csrf_token() }}
+        <label for="usernames">Username(s)</label>
+        {{ form.usernames(class="input", placeholder="usernames(s)") }}<br>
+        <label for="name">Full Name</label>
+        {{ form.name(class="input", placeholder="username(s)") }}<br>
+        <label for="organisations">Organisations</label>
+        {{ form.organisations(class="input", placeholder="organisation(s)") }}<br>
+        <label for="domains">Domains You Own</label>
+        {{ form.domains(class="input", placeholder="domains") }}<br>
+        {{ form.submit }}
+    </form>
+{% endblock %}
