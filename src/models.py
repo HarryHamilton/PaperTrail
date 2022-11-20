@@ -26,6 +26,7 @@ class LinkSite:
         self.url = url
         self.name = name
         self.snippet = snippet
+        self.extracted_domain = tldextract.extract(self.url)
 
     def __repr__(self):
         return self.url
