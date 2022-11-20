@@ -51,4 +51,4 @@ def BeenPwnedQuery(list_of_sites):
 
             dicts.append(data)
 
-    print(dicts)
+    return dicts
