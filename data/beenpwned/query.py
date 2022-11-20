@@ -33,6 +33,7 @@ def BeenPwnedQuery(list_of_sites):
             site_name = ""
             domain = ""
             breach_date = ""
+            description = ""
             # Loop through the dictionary that we get from POST request
             for key, value in response_json.items():
                 # print(key, value)   # prints all the key, value pairs
@@ -42,12 +43,15 @@ def BeenPwnedQuery(list_of_sites):
                     domain = value
                 if key == "BreachDate":
                     breach_date = value
+                if key == "Description":
+                    description = value
 
             # save necessary variables in a dictionary
             data = {"site_name": site_name,
                     "domain": domain,
                     "breach_date": breach_date,
-                    "id": website["id"]}
+                    "id": website["id"],
+                    "description": description}
 
             dicts.append(data)
 

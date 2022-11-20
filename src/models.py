@@ -1,3 +1,4 @@
+import tldextract
 class Individual:
     def __init__(self, usernames, name, organisations, domains):
         self.usernames = usernames
@@ -6,10 +7,13 @@ class Individual:
         self.domains = domains
 
 class AccountSite:
-    def __init__(self, username, url, pwned):
+    def __init__(self, username, url, pwned, breach_date, pwn_description):
         self.url = url
         self.username = username
         self.pwned = pwned
+        self.breach_date = breach_date
+        self.pwn_description = pwn_description
+        self.extracted_domain = tldextract.extract(self.url)
 
     def __repr__(self):
         return self.url
