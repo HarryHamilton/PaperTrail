@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, send_from_directory
 from data.main_query import MainQuery
 from src.index.forms import DataForm
 from src.models import Individual, AccountSite, LinkSite
@@ -76,3 +76,7 @@ def index():
 
 
     return render_template('index.html', form=form)
+
+@index_blueprint.route("/favicon.ico")
+def favicon():
+    return send_from_directory("static", "favicon.ico")
