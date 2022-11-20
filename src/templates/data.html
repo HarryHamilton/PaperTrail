@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+    <h1 class="display-1 text-center" style="font-weight: 600">Paper Trail</h1>
+    <hr style="border: 0;height: 1px;background: #333;background-image: linear-gradient(to right, #ccc, #333, #ccc);">
     <h1 class="text-center">Accounts Found</h1>
-    <ul class="list-group w-50 mx-auto">
+    <ul class="list-group col-lg-6 mx-auto">
         {% for site in account_sites %}
             <!-- Button trigger modal -->
             <li class="list-group-item d-grid gap-2">
@@ -45,7 +47,7 @@
     </ul>
     <br>
     <h1 class="text-center">Elsewhere on the Internet</h1>
-        <ul class="list-group w-50 mx-auto">
+        <ul class="list-group col-lg-6 mx-auto">
         {% for domain, sites in grouped_list.items() %}
             <!-- Button trigger modal -->
             <li class="list-group-item d-grid gap-2">
