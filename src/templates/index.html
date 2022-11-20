@@ -1,14 +1,23 @@
+{% extends "base.html" %}
 {% block content %}
     <form method="post">
         {{ form.csrf_token() }}
-        <label for="usernames">Username(s)</label>
-        {{ form.usernames(class="input", placeholder="usernames(s)") }}<br>
-        <label for="name">Full Name</label>
-        {{ form.name(class="input", placeholder="username(s)") }}<br>
-        <label for="organisations">Organisations</label>
-        {{ form.organisations(class="input", placeholder="organisation(s)") }}<br>
-        <label for="domains">Domains You Own</label>
-        {{ form.domains(class="input", placeholder="domains") }}<br>
-        {{ form.submit }}
+        <div class="mb-3">
+        <label for="usernames" class="form-label">Username(s):</label>
+        {{ form.usernames(type="text", class="form-control", id="usernames") }}
+        </div>
+        <div class="mb-3">
+        <label for="name" class="form-label">Full Name:</label>
+        {{ form.name(type="text", class="form-control", id="name") }}
+        </div>
+        <div class="mb-3">
+        <label for="organisations" class="form-label">Organisation(s):</label>
+        {{ form.organisations(type="text", class="form-control", id="organisations") }}
+        </div>
+        <div class="mb-3">
+        <label for="domains" class="form-label">Domains You Own:</label>
+        {{ form.domains(type="text", class="form-control", id="domains") }}
+        </div>
+        {{ form.submit(type="submit", class="btn btn-primary") }}
     </form>
 {% endblock %}

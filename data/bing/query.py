@@ -17,7 +17,8 @@ class BingQuery:
 
     def query(self):
         params = {
-            "q": self.__generate_queries()
+            "q": self.__generate_queries(),
+            "count": 50
         }
         headers = {
             "Ocp-Apim-Subscription-Key": self.API_Key

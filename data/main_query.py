@@ -6,10 +6,10 @@ from data.beenpwned.query import BeenPwnedQuery
 class MainQuery:
     def __init__(self, individual):
         self.__individual = individual
-        self.__bing_results = None
-        self.__sherlock_results = None
-        self.__beenpwned_results = None
-        self.__results = None
+        self.__bing_results = []
+        self.__sherlock_results = []
+        self.__beenpwned_results = []
+        self.__results = []
 
     def query(self):
         self.__do_sherlock_query()
