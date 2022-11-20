@@ -22,10 +22,10 @@ def index():
             domains=domains
         )
         print(new_individual.__dict__)
-        # query = MainQuery(new_individual).query()
-        # bing_results = query["bing_results"]
-        # sherlock_results = query["sherlock_results"]
-        # beenpwned_results = query["beenpwned_results"]
+        query = MainQuery(new_individual).query()
+        bing_results = query["bing_results"]
+        sherlock_results = query["sherlock_results"]
+        beenpwned_results = query["beenpwned_results"]
         # with open("sherlock_results.json", "w") as f:
         #     f.write(json.dumps(sherlock_results))
         #
@@ -36,10 +36,11 @@ def index():
         #     f.write(json.dumps(beenpwned_results))
 
 
-        with open("bing_results.json", "r") as bing, open("sherlock_results.json") as sherlock, open("beenpwned_results.json") as beenpwned:
-            bing_results = json.loads(bing.read())
-            sherlock_results = json.loads(sherlock.read())
-            beenpwned_results= json.loads(beenpwned.read())
+        # with open("bing_results.json", "r") as bing, open("sherlock_results.json") as sherlock, open("beenpwned_results.json") as beenpwned:
+        #     bing_results = json.loads(bing.read())
+        #     sherlock_results = json.loads(sherlock.read())
+        #     beenpwned_results= json.loads(beenpwned.read())
+
         account_sites = []
 
         for user in sherlock_results:
@@ -61,8 +62,16 @@ def index():
         for page in bing_results["webPages"]["value"]:
             linked_sites.append(LinkSite(page["url"], page["name"], page["snippet"]))
 
+        grouped_list = {}
+        for site in linked_sites:
+            dom = site.extracted_domain.domain + site.extracted_domain.suffix
+            if dom not in grouped_list.keys():
+                grouped_list[dom] = [site]
+            else:
+                grouped_list[dom].append(site)
 
-        return render_template("data.html", account_sites=account_sites, str=str, string=string)
+
+        return render_template("data.html", account_sites=account_sites, str=str, string=string, grouped_list=grouped_list)
 
 
 
