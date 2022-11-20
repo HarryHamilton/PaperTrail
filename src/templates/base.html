@@ -2,22 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<div class="container p-25 pt-5">
 <form method="post">
     {{ form.csrf_token() }}
-    <label for="usernames">Username(s)</label>
-    {{ form.usernames(class="input", placeholder="usernames(s)") }}<br>
-    <label for="emails">Email(s)</label>
-    {{ form.emails(class="input", placeholder="email(s)") }}<br>
-    <label for="name">Full Name</label>
-    {{ form.name(class="input", placeholder="username(s)") }}<br>
-    <label for="organisations">Organisations</label>
-    {{ form.organisations(class="input", placeholder="organisation(s)") }}<br>
-    <label for="domains">Domains You Own</label>
-    {{ form.domains(class="input", placeholder="domains") }}<br>
-    {{ form.submit }}
+    <div class="mb-3">
+    <label for="usernames" class="form-label">Username(s):</label>
+    {{ form.usernames(type="text", class="form-control", id="usernames") }}
+    </div>
+    <div class="mb-3">
+    <label for="name" class="form-label">Full Name:</label>
+    {{ form.name(type="text", class="form-control", id="name") }}
+    </div>
+    <div class="mb-3">
+    <label for="organisations" class="form-label">Organisation(s):</label>
+    {{ form.organisations(type="text", class="form-control", id="organisations") }}
+    </div>
+    <div class="mb-3">
+    <label for="domains" class="form-label">Domains You Own:</label>
+    {{ form.domains(type="text", class="form-control", id="domains") }}
+    </div>
+    {{ form.submit(type="submit", class="btn btn-primary") }}
 </form>
+</div>
 </body>
 </html>
